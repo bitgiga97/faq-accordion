@@ -1,0 +1,26 @@
+@mixin flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-row-center {
+    @include flex-col-center;
+    flex-direction: row;
+}
+
+//typography
+@mixin header-text {
+    font-weight: 700;
+    font-size: 3.2em;
+    line-height: 4em;
+    color: #1E1F36;
+}
+
+@mixin question-text {
+    font-weight: 400;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    color: #4B4C5F;
+}

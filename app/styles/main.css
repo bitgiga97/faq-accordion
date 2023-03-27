@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Kumbh Sans;
+  font-style: normal;
+  background: linear-gradient(180deg, #B068E9 0%, #6463E7 100%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 32.7rem;
+  height: 53.5rem;
+  margin-top: 6.3rem;
+  background: #FFFFFF;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  border-radius: 23px;
+  position: relative;
+  background-image: url(/faq-accordion/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position-x: 4rem;
+  padding: 0 2.4rem 4.8rem 2.4rem;
+}
+.container .box-img {
+  display: none;
+}
+.container .bg-img {
+  width: 23.7rem;
+  height: 18rem;
+  position: relative;
+  background-image: url(/faq-accordion/images/illustration-woman-online-mobile.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -11rem;
+  left: 2rem;
+}
+.container .header {
+  font-weight: 700;
+  font-size: 3.2em;
+  line-height: 4em;
+  color: #1E1F36;
+  text-align: center;
+  margin-top: -12rem;
+  margin-bottom: -3.5rem;
+}
+.container .line {
+  width: 100%;
+  height: 1px;
+  background: #E8E8EA;
+}
+.container .question {
+  font-weight: 400;
+  font-size: 1.3em;
+  line-height: 1.6em;
+  color: #4B4C5F;
+  position: relative;
+}
+.container .question:hover {
+  cursor: pointer;
+  color: #F47B56;
+}
+.container #arrow {
+  position: relative;
+  float: right;
+}
+.container #arrow:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 92rem;
+    height: 50.9rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 50% 50%;
+    background-image: url(/faq-accordion/images/bg-pattern-desktop.svg);
+    background-position: top -28.9rem left -54.6rem;
+    padding: 0;
+  }
+  .container .bg-img {
+    width: 52.2rem;
+    height: 45.9rem;
+    grid-column: 1/1;
+    background-image: url(/faq-accordion/images/illustration-woman-online-desktop.svg);
+    background-size: contain;
+    position: static;
+    background-position-x: -10rem;
+    background-position-y: 5rem;
+  }
+  .container .header {
+    grid-column: 3/3;
+    grid-row: 2/2;
+    position: relative;
+    top: -10.5rem;
+    left: -17rem;
+    text-align: left;
+    width: 6.9rem;
+    height: 4rem;
+    margin-left: -28rem;
+  }
+  .container .question-box {
+    grid-column: 3/3;
+    grid-row: 2;
+    position: relative;
+    top: -10.5rem;
+    width: 35rem;
+    margin-left: -45rem;
+  }
+  .container .box-img {
+    display: block;
+    width: 9rem;
+    height: 10.6rem;
+    position: relative;
+    left: -61.5rem;
+    top: 20rem;
+  }
+}/*# sourceMappingURL=main.css.map */
