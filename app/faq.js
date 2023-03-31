@@ -1,18 +1,36 @@
-// Get all question elements
+// get all question elements as nodeLists.
+
 const questions = document.querySelectorAll('.question');
+const answer = document.querySelectorAll('#answer');
+const arrow = document.querySelectorAll('#arrow');
 
-// Add click event listener to each question
-questions.forEach(question => {
-    // Get answer element
-    const answer = question.nextElementSibling;
+// transform nodeLists to Array.
 
-    // Add click event listener to arrow icon
-    const arrow = question.querySelector('.arrow-icon');
-    arrow.addEventListener('click', () => {
-        // Toggle class to show/hide answer element
-        answer.classList.toggle('show');
+const questionArray = Array.from(questions);
+const answerArray = Array.from(answer);
+const arrowArray = Array.from(arrow);
 
-        // Toggle arrow icon rotation
-        arrow.classList.toggle('rotate');
+//hide the answers by default
+for (let i = 0; i < answer.length; i++) {
+    answer[i].style.display = 'none';
+}
+questionArray.forEach((question, index) => {
+    question.addEventListener("click", () => {
+        if (question.lastElementChild.style.display === 'none' &&
+            question.firstElementChild.style.transform === "") {
+            question.firstElementChild.style.fontWeight = '900';
+            question.children[1].style.transform = "rotate(180deg)";
+            question.lastElementChild.style.display = 'block';
+        } else if (question.children[1].style.transform === "rotate(180deg)") {
+            question.lastElementChild.style.display = 'none';
+            question.firstElementChild.style.transform = "";
+        }
+
     });
+
 });
+// console.log(arrowArray);
+
+
+
+console.log(questionArray);
