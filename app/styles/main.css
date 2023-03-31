@@ -181,8 +181,9 @@ body {
   display: flex;
   flex-direction: column;
 }
-.container .question:hover {
+.container .question h2:hover {
   cursor: pointer;
+  color: #F47B56;
 }
 .container #arrow {
   position: relative;

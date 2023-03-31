@@ -1,36 +1,50 @@
-// get all question elements as nodeLists.
-
+// get all question elements as nodeLists
 const questions = document.querySelectorAll('.question');
-const answer = document.querySelectorAll('#answer');
-const arrow = document.querySelectorAll('#arrow');
 
 // transform nodeLists to Array.
-
 const questionArray = Array.from(questions);
-const answerArray = Array.from(answer);
-const arrowArray = Array.from(arrow);
 
-//hide the answers by default
-for (let i = 0; i < answer.length; i++) {
-    answer[i].style.display = 'none';
+// variable to keep track of which question is currently open
+let openQuestion = null;
+
+// hide the answers by default
+for (let i = 0; i < questionArray.length; i++) {
+    questionArray[i].lastElementChild.style.display = 'none';
 }
-questionArray.forEach((question, index) => {
-    question.addEventListener("click", () => {
-        if (question.lastElementChild.style.display === 'none' &&
-            question.firstElementChild.style.transform === "") {
-            question.firstElementChild.style.fontWeight = '900';
-            question.children[1].style.transform = "rotate(180deg)";
-            question.lastElementChild.style.display = 'block';
-        } else if (question.children[1].style.transform === "rotate(180deg)") {
-            question.lastElementChild.style.display = 'none';
-            question.firstElementChild.style.transform = "";
+
+// add click event listener to each question
+for (let i = 0; i < questionArray.length; i++) {
+    questionArray[i].addEventListener("click", () => {
+
+        // get the answer, arrow, and question text elements for the clicked question
+        const answer = questionArray[i].lastElementChild;
+        const arrow = questionArray[i].children[1];
+        const questionText = questionArray[i].firstElementChild;
+
+        // if no question is currently open, open the clicked question
+        if (openQuestion === null) {
+            answer.style.display = 'block';
+            arrow.style.transform = 'rotate(180deg)';
+            questionText.style.fontWeight = '900';
+            openQuestion = questionArray[i];
         }
+        // if the clicked question is already open, close it
+        else if (openQuestion === questionArray[i]) {
+            answer.style.display = 'none';
+            arrow.style.transform = '';
+            questionText.style.fontWeight = '500';
+            openQuestion = null;
+        }
+        // if a different question is currently open, close it and open the clicked question
+        else {
+            openQuestion.lastElementChild.style.display = 'none';
+            openQuestion.children[1].style.transform = '';
+            openQuestion.firstElementChild.style.fontWeight = '500';
 
+            answer.style.display = 'block';
+            arrow.style.transform = 'rotate(180deg)';
+            questionText.style.fontWeight = '900';
+            openQuestion = questionArray[i];
+        }
     });
-
-});
-// console.log(arrowArray);
-
-
-
-console.log(questionArray);
+}
