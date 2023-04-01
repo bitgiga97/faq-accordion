@@ -25,6 +25,7 @@ for (let i = 0; i < questionArray.length; i++) {
         if (openQuestion === null) {
             answer.style.display = 'block';
             arrow.style.transform = 'rotate(180deg)';
+            arrow.style.transition = "all 0.5s ease-in";
             questionText.style.fontWeight = '900';
             openQuestion = questionArray[i];
         }
